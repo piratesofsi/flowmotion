@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+
+
+
+
+
+@layer utilities {
+  .font-inter {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+@layer utilities {
+  .font-geist {
+    font-family: Geist, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradientMove 6s ease infinite;
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+
+
+
