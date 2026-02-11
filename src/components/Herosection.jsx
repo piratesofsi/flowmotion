@@ -1,4 +1,6 @@
 import React from 'react'
+import { Copy } from 'lucide-react'
+import { Eye } from 'lucide-react'
 
 const Herosection = () => {
     return (
@@ -30,7 +32,48 @@ const Herosection = () => {
                     Copy, tweak, and ship effects like typewriters, gradients, loaders, and micro-interactions.</p>
 
                 {/* div with 2 cards  */}
-                <div> </div>
+                <div className='flex  justify-center items-center gap-4 pt-12 w-[500px]'>
+
+                    {/* first card  */}
+                    <div className='px-5 py-[14px] border flex justify-between items-center gap-4  w-full rounded-2xl border-gray-100 shadow-lg '>
+                        {/* left side copy icon  */}
+                        <div className='w-[20%] h-full p-2   flex justify-center items-center
+                        bg-blue-100 rounded-md'>
+                            <Copy className='w-[19px] h-[19px] text-blue-500' ></Copy>
+
+                        </div>
+                        {/* right side  */}
+                        <div className='flex flex-col w-[90%] pr-2'>
+                            {/* h2 */}
+                            <h4 className='text-[13px] font-bold font-inter'>One-Click Copy</h4>
+                            {/* h4 */}
+                            <h4 className='text-[13px] font-medium text-gray-500 '>Ready-to-use  codes</h4>
+                        </div>
+
+
+                    </div>
+                    {/* second card  */}
+                    {/* first card  */}
+                 
+                      {/* first card  */}
+                    <div className='px-5 py-[14px] border border-gray-100 flex justify-between items-center gap-4  w-full rounded-2xl shadow-lg  '>
+                        {/* left side copy icon  */}
+                        <div className='w-[20%]  h-full p-2 flex justify-center items-center
+                        bg-blue-100 rounded-md p-1'>
+                            <Eye className='w-[19px] h-[19px]'></Eye>
+
+                        </div>
+                        {/* right side  */}
+                        <div className='flex flex-col w-[90%] pr-2 font-inter '>
+                            {/* h2 */}
+                            <h4 className='text-[13px] font-bold '>Live Preview</h4>
+                            {/* h4 */}
+                            <h4 className='text-[12px] font-medium text-gray-500 '>See motion in action</h4>
+                        </div>
+
+
+                    </div>
+                     </div>
 
                 {/* div with contribute here and browse animations */}
                 <div> </div>
