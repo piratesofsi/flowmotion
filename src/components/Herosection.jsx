@@ -1,15 +1,18 @@
 import React from 'react'
 import { Copy } from 'lucide-react'
 import { Eye } from 'lucide-react'
+import { Github } from 'lucide-react'
+import { CodeXml } from "lucide-react";
+
 
 const Herosection = () => {
     return (
-        <section className='min-h-screen max-w-[600px] mx-auto py-20 mt-11' >
+        <section className='min-h-screen max-w-[600px] mx-auto py-20  md:mt-11' >
             {/* main content */}
 
             <div className='flex flex-col justify-center items-center'>
                 {/* main big text + small text */}
-                <h1 className='font-inter  text-6xl text-center font-semibold '>
+                <h1 className='font-inter  md:text-6xl text-[36px] text-center font-semibold '>
 
                     <span className="bg-gradient-to-r from-indigo-500 via-purple-500  to-pink-500  bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
                         Craft Smooth
@@ -20,7 +23,7 @@ const Herosection = () => {
                     and animate gradient class js animates it  */}
                 </h1>
 
-                <h2 className='text-5xl text-center font-semibold font-geist pb-9 '>
+                <h2 className='md:text-5xl text-[27px] text-center font-semibold font-geist pb-9 '>
                     <span className="bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-500 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
                         UI Motion
                     </span>
@@ -28,11 +31,11 @@ const Herosection = () => {
 
                 </h2>
                 {/* description  */}
-                <p className='w-[540px] font-inter text-center text-[18px]  text-gray-600'>Production-ready motion patterns with raw CSS and animation logic included.
+                <p className='md:w-[540px] w-[300px] text-[16px] md:pb-8 pb-8  font-inter text-center md:text-[18px]  text-gray-600'>Production-ready motion patterns with raw CSS and animation logic included.
                     Copy, tweak, and ship effects like typewriters, gradients, loaders, and micro-interactions.</p>
 
                 {/* div with 2 cards  */}
-                <div className='flex  justify-center items-center gap-4 pt-12 w-[500px]'>
+                <div className='flex md:flex-row flex-col  justify-center items-center gap-4 pt-12 md:w-[500px] '>
 
                     {/* first card  */}
                     <div className='px-5 py-[14px] border flex justify-between items-center gap-4  w-full rounded-2xl border-gray-100 shadow-lg '>
@@ -53,9 +56,8 @@ const Herosection = () => {
 
                     </div>
                     {/* second card  */}
-                    {/* first card  */}
+                  
                  
-                      {/* first card  */}
                     <div className='px-5 py-[14px] border border-gray-100 flex justify-between items-center gap-4  w-full rounded-2xl shadow-lg  '>
                         {/* left side copy icon  */}
                         <div className='w-[20%]  h-full p-2 flex justify-center items-center
@@ -76,7 +78,38 @@ const Herosection = () => {
                      </div>
 
                 {/* div with contribute here and browse animations */}
-                <div> </div>
+                 <div className='flex md:flex-row flex-col  justify-between items-center gap-4 pt-12 md:w-[400px] w-[260px] md:pb-0  '>
+
+                    {/* first card  */}
+                    <a href='' className='px-1 py-[8px] bg-black border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
+                        {/* left side github icon  */}
+
+                        <Github width="16px" className='text-white'></Github>
+                       
+                        {/* right side  */}
+                        <div className='text-white font-semibold font-inter text-[15px] '>
+                            Contribute here~
+                        </div>
+
+
+                    </a>
+                    {/* second card  */}
+                      
+                    <a href='' className='px-1 py-[8px] hover:bg-gray-100 duration-200 transition-all  border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
+                        {/* left side github icon  */}
+
+                        <CodeXml width="16px" className='text-black'></CodeXml>
+                       
+                        {/* right side  */}
+                        <div className='text-black font-semibold font-inter '>
+                            Browse Motion
+                        </div>
+
+
+                    </a>
+                 
+                   
+                     </div>
             </div>
 
         </section >
