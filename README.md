@@ -1,16 +1,67 @@
-# React + Vite
+# FlowMotion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Production-ready UI animations you can copy and ship instantly.
 
-Currently, two official plugins are available:
+![FlowMotion Preview](https://flowmotion-liard.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What is it?
 
-## React Compiler
+FlowMotion is an open-source library of ready-to-use CSS animations — loaders, buttons, text effects, and transitions. Find what you need, copy the code, done.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **One-click copy** — grab the CSS or JSX instantly
+- **Live preview** — see every animation before you copy
+- **Search** — find animations by name
+- **Category filter** — browse Loaders, Buttons, Text, Transitions
+- **Open source** — add your own animations via PR
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Demo
+
+[flowmotion-liard.vercel.app](https://flowmotion-liard.vercel.app)
+
+## Tech Stack
+
+- React
+- Tailwind CSS
+- Vite
+
+## Run Locally
+
+```bash
+git clone https://github.com/piratesofsi/flowmotion.git
+cd flowmotion
+npm install
+npm run dev
+```
+
+## Contributing
+
+Want to add an animation? It's simple — each animation is just one object in the array.
+
+```js
+{
+  id: "my-animation",        // unique kebab-case id
+  title: "My Animation",     // display name
+  category: "Loader",        // Loader | Button | Text | Transition
+  preview: (                 // JSX preview shown on the card
+    <div style={{ ... }} />
+  ),
+  cssCode: `                 // raw CSS snippet users will copy
+    .my-animation { ... }
+  `,
+  jsCode: `                  // optional JSX version
+    const MyAnimation = () => <div className="..." />;
+  `
+}
+```
+
+Steps:
+1. Fork the repo
+2. Add your animation object to `src/components/LibrarySection.jsx`
+3. Test it locally — make sure the preview renders and the code is clean
+4. Open a pull request with the title `feat: add [animation name]`
+
+## License
+
+MIT

@@ -778,12 +778,16 @@ const LibrarySection = () => {
   const [selectedAnimation, setSelectedAnimation] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories = ["All", "Loader", "Button", "Text", "Transition"];
 
-  const filtered = activeCategory === "All"
-    ? animations
-    : animations.filter(a => a.category === activeCategory);
+  //  categories + search logic 
+  const filtered = animations 
+  // first filter => for selecting category 
+  .filter(a=>activeCategory==="All" || a.category===activeCategory)
+  // second filter => for searching 
+  .filter(a=>a.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
   const openDrawer = (animation) => {
     setSelectedAnimation(animation);
@@ -797,9 +801,21 @@ const LibrarySection = () => {
 
   return (
     <section className="py-16 px-6 max-w-6xl mx-auto">
-      <div className="text-center mb-8">
+      <div className="text-center mb-7">
         <h2 className="text-3xl font-bold text-gray-900">Motion Library</h2>
         <p className="text-gray-500 mt-2">Production-ready animations and loaders.</p>
+      </div>
+
+      {/* search bar  */}
+      <div className="flex justify-center items-center mb-5">
+        <input type="text" 
+        placeholder="Search Animations..."
+        value={searchQuery}
+        onChange={(e)=>{
+            setSearchQuery(e.target.value)
+        }}  
+         className="w-full max-w-md px-4 py-2.5 rounded-full border border-gray-200 bg-white text-gray-800 placeholder-gray-400 outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition-all text-center"
+        />
       </div>
 
       {/* Category Filter */}
