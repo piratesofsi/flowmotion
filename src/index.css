@@ -3,11 +3,6 @@
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 
-
-
-
-
-
 @layer utilities {
   .font-inter {
     font-family: "Inter", system-ui, sans-serif;
@@ -37,7 +32,6 @@
   }
 }
 
-
 html::-webkit-scrollbar {
   display: none;
 }
@@ -48,15 +42,28 @@ html {
 }
 
 @keyframes typing {
-  0%   { width: 0 }
-  40%  { width: 100% }  /* typing done */
-  60%  { width: 100% }  /* pause at full text */
-  100% { width: 0 }     /* delete */
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  } /* typing done */
+  60% {
+    width: 100%;
+  } /* pause at full text */
+  100% {
+    width: 0;
+  } /* delete */
 }
 
 @keyframes blink {
-  0%, 100% { border-color: transparent }
-  50%      { border-color: #7c3aed }
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #7c3aed;
+  }
 }
 
 .typewriter {
@@ -64,7 +71,197 @@ html {
   white-space: nowrap;
   border-right: 2px solid #7c3aed;
   display: inline-block;
-  animation: typing 5s steps(30, end) infinite,
-             blink 1s step-end infinite;
+  animation:
+    typing 5s steps(30, end) infinite,
+    blink 1s step-end infinite;
 }
 
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+@keyframes barWave {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounceDot {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-16px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@keyframes flipSquare {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+@keyframes typingBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+@keyframes shimmerBtn {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+@keyframes jellyPop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.92, 1.08);
+  }
+  50% {
+    transform: scale(1.08, 0.92);
+  }
+}
+@keyframes gradientShift {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    text-shadow: none;
+  }
+  91% {
+    text-shadow:
+      -2px 0 #ec4899,
+      2px 0 #06b6d4;
+  }
+  93% {
+    text-shadow:
+      2px 0 #ec4899,
+      -2px 0 #06b6d4;
+  }
+}
+@keyframes letterBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes flipIn {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

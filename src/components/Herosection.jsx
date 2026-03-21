@@ -87,10 +87,12 @@ const Herosection = () => {
                         <Github width="16px" className='text-white'></Github>
                        
                         {/* right side  */}
-                        <div className='text-white font-semibold font-inter text-[15px] '>
+                        <a href="https://github.com/piratesofsi/flowmotion"><div className='text-white font-semibold font-inter text-[15px] '>
                             Contribute here~
                         </div>
+</a>
 
+                        
 
                     </a>
                     {/* second card  */}
@@ -101,6 +103,8 @@ const Herosection = () => {
                         <CodeXml width="16px" className='text-black'></CodeXml>
                        
                         {/* right side  */}
+                        
+
                         <div className='text-black font-semibold font-inter '>
                             Browse Motion
                         </div>
