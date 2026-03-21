@@ -1,32 +1,46 @@
+<div align="center">
+
+<img src="public/logo.png" alt="FlowMotion" width="60" />
+
 # FlowMotion
 
-Production-ready UI animations you can copy and ship instantly.
+**Production-ready UI animations. Copy. Paste. Ship.**
 
-![FlowMotion Preview](https://flowmotion-liard.vercel.app)
+[Live Demo](https://flowmotion-liard.vercel.app) · [Report Bug](https://github.com/piratesofsi/flowmotion/issues) · [Contribute an Animation](https://github.com/piratesofsi/flowmotion/blob/main/CONTRIBUTING.md)
 
-## What is it?
+![GitHub stars](https://img.shields.io/github/stars/piratesofsi/flowmotion?style=flat&color=7c3aed)
+![GitHub forks](https://img.shields.io/github/forks/piratesofsi/flowmotion?style=flat&color=7c3aed)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-7c3aed)
 
-FlowMotion is an open-source library of ready-to-use CSS animations — loaders, buttons, text effects, and transitions. Find what you need, copy the code, done.
+</div>
+
+---
+
+## What is FlowMotion?
+
+FlowMotion is an open-source library of copy-paste CSS animations for your UI. No dependencies, no config — just find the animation you need, copy the code, and drop it into your project.
+
+Loaders, buttons, text effects, transitions — all in one place with live previews.
+
+---
 
 ## Features
 
-- **One-click copy** — grab the CSS or JSX instantly
-- **Live preview** — see every animation before you copy
+- **Live Preview** — see every animation in action before copying
+- **One-Click Copy** — grab the raw CSS or JSX instantly
 - **Search** — find animations by name
-- **Category filter** — browse Loaders, Buttons, Text, Transitions
-- **Open source** — add your own animations via PR
+- **Category Filter** — browse by Loader, Button, Text, or Transition
+- **Open Source** — built by the community, for the community
+
+---
 
 ## Demo
 
-[flowmotion-liard.vercel.app](https://flowmotion-liard.vercel.app)
+> [flowmotion-liard.vercel.app](https://flowmotion-liard.vercel.app)
 
-## Tech Stack
+---
 
-- React
-- Tailwind CSS
-- Vite
-
-## Run Locally
+## Getting Started
 
 ```bash
 git clone https://github.com/piratesofsi/flowmotion.git
@@ -35,33 +49,85 @@ npm install
 npm run dev
 ```
 
+---
+
 ## Contributing
 
-Want to add an animation? It's simple — each animation is just one object in the array.
+Want to add your own animation? It takes 5 minutes.
 
-```js
+All animations live in one file: **`src/data/animations.jsx`**
+
+That's the only file you need to touch.
+
+### Animation shape
+
+```jsx
 {
-  id: "my-animation",        // unique kebab-case id
-  title: "My Animation",     // display name
-  category: "Loader",        // Loader | Button | Text | Transition
-  preview: (                 // JSX preview shown on the card
+  id: "my-animation",       // unique kebab-case string
+  title: "My Animation",    // display name shown on the card
+  category: "Loader",       // Loader | Button | Text | Transition
+  preview: (                // JSX shown as live preview on the card
     <div style={{ ... }} />
   ),
-  cssCode: `                 // raw CSS snippet users will copy
-    .my-animation { ... }
+  cssCode: `                // raw CSS users will copy
+    .my-animation {
+      ...
+    }
   `,
-  jsCode: `                  // optional JSX version
+  jsCode: `                 // optional — React/JSX version
     const MyAnimation = () => <div className="..." />;
   `
 }
 ```
 
-Steps:
+### Steps
+
 1. Fork the repo
-2. Add your animation object to `src/components/LibrarySection.jsx`
-3. Test it locally — make sure the preview renders and the code is clean
-4. Open a pull request with the title `feat: add [animation name]`
+2. Add your animation object to `src/data/animations.jsx`
+3. Run locally and make sure the preview renders correctly
+4. Open a pull request with the title: `feat: add [animation name]`
+
+### Guidelines
+
+- Preview must actually animate — no static elements
+- CSS must be self-contained with `@keyframes` included
+- No external dependencies
+- Keep the `id` unique and in `kebab-case`
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── AnimationCard.jsx     # individual card UI
+│   ├── AnimationDrawer.jsx   # slide-in detail drawer
+│   ├── LibrarySection.jsx    # grid + search + filter logic
+│   ├── HeroSection.jsx       # landing hero
+│   └── Navbar.jsx
+├── data/
+│   └── animations.jsx        # ← all animation data lives here
+```
+
+---
+
+## Tech Stack
+
+- [React](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Vite](https://vitejs.dev)
+
+---
 
 ## License
 
-MIT
+MIT — use it however you want.
+
+---
+
+<div align="center">
+
+If FlowMotion saved you time, consider giving it a ⭐ — it helps others find it.
+
+</div>
