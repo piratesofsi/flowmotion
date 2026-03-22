@@ -74,21 +74,30 @@ src/
 
 Want to add an animation? You only need to touch **one file**: `src/data/animations.jsx`
 
-### Add your animation object
+No touching `index.css`, no touching any component. Just add your object to the array and you're done.
+
+### Animation template
 
 ```jsx
 {
   id: "my-animation",        // unique kebab-case id
   title: "My Animation",     // name shown on the card
   category: "Loader",        // Loader | Button | Text | Transition
-  preview: (                 // JSX live preview shown on the card
-    <div style={{
-      width: 40,
-      height: 40,
-      borderRadius: "50%",
-      background: "#9333ea",
-      animation: "myAnim 1s infinite"
-    }} />
+  preview: (
+    <>
+      <style>{`
+        @keyframes myAnim {
+          /* your keyframes here */
+        }
+      `}</style>
+      <div style={{
+        width: 40,
+        height: 40,
+        borderRadius: "50%",
+        background: "#9333ea",
+        animation: "myAnim 1s infinite"
+      }} />
+    </>
   ),
   cssCode: `.my-animation {
   width: 40px;
@@ -106,21 +115,24 @@ const MyAnimation = () => <div className="..." />;`,
 }
 ```
 
+> **Note:** Put `@keyframes` inside the `<style>` tag in `preview` — this makes the card animate. The `@keyframes` in `cssCode` is what users copy. No other files need to be touched.
+
 ### Steps
 
 ```
 1. Fork this repo
 2. Add your object to src/data/animations.jsx
-3. Run npm run dev — make sure the preview renders
+3. Run npm run dev — make sure the preview renders and animates
 4. Open a PR titled: feat: add [animation name]
 ```
 
 ### Rules
 
 - Preview must actually animate — no static elements
-- CSS must include `@keyframes` if needed
+- Put `@keyframes` inside `<style>` in the preview, not in any external CSS file
 - No external libraries or dependencies
 - `id` must be unique and in `kebab-case`
+- CSS in `cssCode` must be self-contained and copy-paste ready
 
 ---
 
