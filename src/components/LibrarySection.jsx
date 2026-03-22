@@ -32,7 +32,7 @@ const LibrarySection = () => {
   };
 
   return (
-    <section className="py-16 px-6 max-w-6xl mx-auto">
+    <section id="librarysection" className="py-16 px-6 max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Motion Library</h2>
         <p className="text-gray-500 mt-2">Production-ready animations and loaders.</p>

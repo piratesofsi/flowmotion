@@ -81,7 +81,7 @@ const Herosection = () => {
                  <div className='flex md:flex-row flex-col  justify-between items-center gap-4 pt-12 md:w-[400px] w-[260px] md:pb-0  '>
 
                     {/* first card  */}
-                    <a href='' className='px-1 py-[8px] bg-black border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
+                    <div className='px-1 py-[8px] bg-black border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
                         {/* left side github icon  */}
 
                         <Github width="16px" className='text-white'></Github>
@@ -94,10 +94,10 @@ const Herosection = () => {
 
                         
 
-                    </a>
+                    </div>
                     {/* second card  */}
                       
-                    <a href='' className='px-1 py-[8px] hover:bg-gray-100 duration-200 transition-all  border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
+                    <a href='#librarysection' className='px-1 py-[8px] hover:bg-gray-100 duration-200 transition-all  border flex justify-center items-center gap-1  w-full rounded-[10px] border-gray-100 shadow-lg '>
                         {/* left side github icon  */}
 
                         <CodeXml width="16px" className='text-black'></CodeXml>

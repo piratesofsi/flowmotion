@@ -8,6 +8,7 @@ const LazyCard = ({ children }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+           console.log("card loaded!") // add this
           setVisible(true);
           observer.disconnect(); // once visible, stop observing
         }
