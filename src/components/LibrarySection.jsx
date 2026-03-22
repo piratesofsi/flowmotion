@@ -2,6 +2,8 @@ import { useState } from "react";
 import AnimationCard from "./AnimationCard";
 import AnimationDrawer from "./AnimationDrawer";
 import { animations } from "../data/animations";
+import LazyCard from "./LazyCard";
+
 
 const categories = ["All", "Loader", "Button", "Text", "Transition"];
 
@@ -63,26 +65,28 @@ const LibrarySection = () => {
           </button>
         ))}
       </div>
-
+  
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.length > 0 ? (
-          filtered.map(anim => (
-            <AnimationCard
-              key={anim.id}
-              title={anim.title}
-              onCopy={() => navigator.clipboard.writeText(anim.cssCode)}
-              onClick={() => openDrawer(anim)}
-            >
-              {anim.preview}
-            </AnimationCard>
-          ))
-        ) : (
-          <div className="col-span-3 text-center py-20 text-gray-400">
-            No animations found for "<span className="text-gray-600">{searchQuery}</span>"
-          </div>
-        )}
-      </div>
+     {/* grid + lazyloading  */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {filtered.length > 0 ? (
+    filtered.map(anim => (
+      <LazyCard key={anim.id}>
+        <AnimationCard
+          title={anim.title}
+          onCopy={() => navigator.clipboard.writeText(anim.cssCode)}
+          onClick={() => openDrawer(anim)}
+        >
+          {anim.preview}
+        </AnimationCard>
+      </LazyCard>
+    ))
+  ) : (
+    <div className="col-span-3 text-center py-20 text-gray-400">
+      No animations found for "<span className="text-gray-600">{searchQuery}</span>"
+    </div>
+  )}
+</div>
 
       <AnimationDrawer
         isOpen={drawerOpen}
