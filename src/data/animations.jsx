@@ -105,7 +105,7 @@ export const animations = [
     category: "Loader",
     preview: (
       <div style={{ display: "flex", gap: 5, alignItems: "flex-end", height: 36 }}>
-        {[0,1,2,3,4].map(i => (
+        {[0, 1, 2, 3, 4].map(i => (
           <div key={i} style={{
             width: 6, height: 36, borderRadius: 3, background: "#9333ea",
             animation: `barWave 1s ease-in-out ${i * 0.12}s infinite`,
@@ -179,7 +179,7 @@ export const animations = [
     category: "Loader",
     preview: (
       <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-        {[0,1,2].map(i => (
+        {[0, 1, 2].map(i => (
           <div key={i} style={{
             width: 12, height: 12, borderRadius: "50%", background: "#9333ea",
             animation: `bounceDot 0.9s ease-in-out ${i * 0.2}s infinite alternate`
@@ -290,7 +290,7 @@ export const animations = [
         display: "inline-flex", gap: 5, alignItems: "center",
         background: "#f3e8ff", borderRadius: 20, padding: "10px 16px"
       }}>
-        {[0,1,2].map(i => (
+        {[0, 1, 2].map(i => (
           <div key={i} style={{
             width: 8, height: 8, borderRadius: "50%", background: "#9333ea",
             animation: `typingBounce 1.2s ease-in-out ${i * 0.2}s infinite`
@@ -771,6 +771,52 @@ export const animations = [
 @keyframes blurIn {
   from { opacity: 0; filter: blur(12px); transform: scale(1.05); }
   to   { opacity: 1; filter: blur(0);    transform: scale(1); }
+}`,
+  },
+
+
+  {
+    id: "ripple-button",
+    title: "Ripple Button",
+    category: "Button",
+    preview: (
+      <>
+        <style>{`
+        @keyframes ripple {
+          to { transform: translate(-50%,-50%) scale(3); opacity: 0; }
+        }
+      `}</style>
+        <button style={{
+          position: "relative", overflow: "hidden",
+          padding: "10px 24px", background: "#9333ea", color: "white",
+          fontSize: 14, fontWeight: 500, border: "none", borderRadius: 8, cursor: "pointer",
+        }}>
+          <span style={{
+            position: "absolute", width: 80, height: 80,
+            borderRadius: "50%", background: "rgba(255,255,255,0.3)",
+            top: "50%", left: "50%",
+            transform: "translate(-50%,-50%) scale(0)",
+            animation: "ripple 1.5s ease-out infinite"
+          }} />
+          Click Me
+        </button>
+      </>
+    ),
+    cssCode: `.ripple-btn {
+  position: relative; overflow: hidden;
+  padding: 10px 24px; background: #9333ea; color: white;
+  border: none; border-radius: 8px; cursor: pointer;
+}
+.ripple-btn::after {
+  content: "";
+  position: absolute; width: 80px; height: 80px;
+  border-radius: 50%; background: rgba(255,255,255,0.3);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  animation: ripple 1.5s ease-out infinite;
+}
+@keyframes ripple {
+  to { transform: translate(-50%,-50%) scale(3); opacity: 0; }
 }`,
   },
 ];
